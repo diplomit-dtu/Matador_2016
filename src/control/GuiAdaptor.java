@@ -24,6 +24,10 @@ public class GuiAdaptor {
 		if (input<=maxSpillere && input >=minSpillere) return input;
 		return minSpillere;
 	}
+
+	public boolean askForNewGame() {
+		return gui.getUserLeftButtonPressed("Spil igen", "ja tak", "nej tak");
+	}
 	
 	
 
