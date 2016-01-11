@@ -17,7 +17,7 @@ public class CreateGuiPlayerAction extends Action {
 	}
 
 	@Override
-	public void execute() {
+	public void doAction() {
 		GuiAdaptor ga = gc.getGuiAdaptor();
 		Color c1 = ga.selectPrimaryColor(i, player);
 		Color c2 = ga.selectSecondaryColor(i, player);
@@ -27,6 +27,12 @@ public class CreateGuiPlayerAction extends Action {
 		GUI_Car car = new GUI_Car(c1, c2, carType, carPattern);
 		GUI_Player gui_player = new GUI_Player(player.getName(), player.getBalance(), car);
 		ga.addPlayer(gui_player);
+	}
+
+	@Override
+	public void undoAction() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

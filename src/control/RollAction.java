@@ -8,10 +8,15 @@ public class RollAction extends Action {
 	}
 
 	@Override
-	public void execute() {
+	protected void doAction() {
 		gc.getDiceCup().roll();
 		gc.getGuiAdaptor().showDice(gc.getDiceCup().getD1().getValue(), gc.getDiceCup().getD2().getValue());
+	}
 
+	@Override
+	protected void undoAction() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

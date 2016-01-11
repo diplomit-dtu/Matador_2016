@@ -10,13 +10,19 @@ public class RunGameAction extends Action {
 	}
 
 	@Override
-	public void execute() {
+	protected void doAction() {
 		new CreatePlayersAction(gc).execute();
 		System.out.println(gc.getPlayers());
 		for (Player player : gc.getPlayers()) {
 			gc.setActivePlayer(player);
 			new PlayerTurnAction(gc).execute();
 		}
+	}
+
+	@Override
+	protected void undoAction() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
