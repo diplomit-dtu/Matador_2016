@@ -1,3 +1,4 @@
+package model;
 
 public class Dice {
 	private int value;

@@ -1,8 +1,9 @@
-import java.util.Collection;
+package util;
+import model.Field;
 
 public class FieldFactory {
 
-	public static Collection<? extends Field> makeFields() {
+	public static Field[] makeFields() {
 		// TODO Auto-generated method stub
 		return null;
 	}

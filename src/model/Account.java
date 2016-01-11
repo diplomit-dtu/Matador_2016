@@ -1,3 +1,4 @@
+package model;
 
 public class Account {
 	private int balance = 0;

@@ -1,3 +1,6 @@
+package control;
+
+import model.Dice;
 
 public class DiceCup {
 	private Dice d1, d2;
