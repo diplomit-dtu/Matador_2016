@@ -8,7 +8,12 @@ public class CreatePlayersAction extends Action {
 
 	@Override
 	public void execute() {
-		gc.getGui().
+		GuiAdaptor ga = gc.getGa();
+		int playerCount = ga.askforNumberOfPlayers();
+		
+		for(int i = 0; i < playerCount; i++){
+			
+		}
 	}
 
 }
