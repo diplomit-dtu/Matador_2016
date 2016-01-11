@@ -24,5 +24,7 @@ public class GuiAdaptor {
 		if (input<=maxSpillere && input >=minSpillere) return input;
 		return minSpillere;
 	}
+	
+	
 
 }
