@@ -1,9 +1,9 @@
 package control;
-
 import gui_codebehind.GUI_FieldFactory;
 import gui_fields.GUI_Field;
 import gui_main.GUI;
-import util.InputValidator;
+import util.GameConstants;
+import util.Messages;
 
 public class GuiAdaptor {
 	private GUI gui;
@@ -14,9 +14,15 @@ public class GuiAdaptor {
 		gui = new GUI(gui_fields);
 	}
 
+	/**
+	 * @return number from 2 - 6 keeps asking player until valid entry
+	 */
 	public int askForNumberOfPlayers() {
-		return gui.getUserInteger("Indtast antal spillere", 2, 6);
-
+		int minSpillere = GameConstants.getInt("minSpillere");
+		int maxSpillere = GameConstants.getInt("maxSpillere");
+		int input =  gui.getUserInteger(Messages.getString("GuiAdaptor.antalSpillere"), minSpillere, maxSpillere);		 //$NON-NLS-1$
+		if (input<=maxSpillere && input >=minSpillere) return input;
+		return minSpillere;
 	}
 
 }
