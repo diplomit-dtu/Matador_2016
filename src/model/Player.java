@@ -5,6 +5,8 @@ public class Player {
 	private int id;
 	private String name;
 	private Account account;
+	private boolean inJail = false;
+	private int sameEyes = 0;
 	
 	public Player(String name, int balance){
 		this.name = name;
@@ -33,5 +35,9 @@ public class Player {
 	public Player addToBalance(int amount) {
 		account.addToBalance(amount);
 		return this;
+	}
+
+	public boolean isInJail() {
+		return inJail;
 	}
 }

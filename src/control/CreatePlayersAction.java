@@ -20,7 +20,9 @@ public class CreatePlayersAction extends Action {
 			int balance = GameConstants.getStartPenge();
 			Player player = new Player(name, balance);
 			players[i] = player;
+			
 			new CreateGuiPlayerAction(gc, i, player).execute();
 		}
+		gc.setPlayers(players);
 	}
 }

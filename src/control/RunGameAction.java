@@ -1,5 +1,7 @@
 package control;
 
+import model.Player;
+
 public class RunGameAction extends Action {
 
 	public RunGameAction(GameController gc) {
@@ -9,8 +11,12 @@ public class RunGameAction extends Action {
 
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
-
+		new CreatePlayersAction(gc).execute();
+		System.out.println(gc.getPlayers());
+		for (Player player : gc.getPlayers()) {
+			gc.setActivePlayer(player);
+			new PlayerTurnAction(gc).execute();
+		}
 	}
 
 }
