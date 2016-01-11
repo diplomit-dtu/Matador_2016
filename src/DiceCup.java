@@ -8,9 +8,10 @@ public class DiceCup {
 		roll();
 	}
 
-	public void roll() {
+	public DiceCup roll() {
 		d1.roll();
 		d2.roll();
+		return this;
 	}
 
 	public Dice getD1() {
