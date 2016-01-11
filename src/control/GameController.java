@@ -14,6 +14,8 @@ public class GameController {
 		ga = new GuiAdaptor();
 		
 	}
+
+	public GuiAdaptor getGuiAdaptor() {return ga;}
 	
 	
 }
