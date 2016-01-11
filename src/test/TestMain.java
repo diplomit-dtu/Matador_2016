@@ -1,5 +1,8 @@
 package test;
 
+import control.Action;
+import control.AskForNewGameAction;
+import control.GameController;
 import control.GuiAdaptor;
 import gui_main.GUI;
 import util.GameConstants;
@@ -7,9 +10,9 @@ import util.GameConstants;
 public class TestMain {
 
 	public static void main(String[] args) {
-//		GuiAdaptor g= new GuiAdaptor();
-//		g.askForNumberOfPlayers();
-		System.out.println(GameConstants.getInt("maxSpillere"));
+
+		Action a = new AskForNewGameAction(new GameController());
+		a.execute();
 	}
 
 }

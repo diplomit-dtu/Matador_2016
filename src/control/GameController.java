@@ -11,13 +11,18 @@ public class GameController {
 	Field[] fields;
 	Action currentAction;
 	private boolean continuePlaying = true;
+	
+	public GameController(){
+		init();
+	}
 
-	public void run() {
+	public void init() {
 		// Make fields
 		fields = FieldFactory.makeFields();
 		//Initialize GUI
 		ga = new GuiAdaptor();
-		//Ask for number of players
+	}
+	public void run(){
 		do {
 			new RunGameAction(this).execute();
 			new AskForNewGameAction(this).execute();
