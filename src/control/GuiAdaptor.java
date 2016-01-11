@@ -58,7 +58,10 @@ public class GuiAdaptor {
 
 	public void addPlayer(GUI_Player gui_player) {
 		// TODO Auto-generated method stub
+	}
 		
+	public boolean askForNewGame() {
+		return gui.getUserLeftButtonPressed("Spil igen", "ja tak", "nej tak");
 	}
 	
 	
