@@ -15,10 +15,7 @@ public class GameController {
 		
 	}
 
-	public GuiAdaptor getGa() {
-		return ga;
-	}
-	
+	public GuiAdaptor getGuiAdaptor() { return ga; }
 	
 	
 }

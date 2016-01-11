@@ -15,5 +15,4 @@ public class CreatePlayersAction extends Action {
 			
 		}
 	}
-
 }
