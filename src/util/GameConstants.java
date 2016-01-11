@@ -10,10 +10,20 @@ public class GameConstants {
 	private GameConstants() {
 	}
 
+	public static int getMinSpiller(){
+		return getInt("minSpillere");
+	}
+
+	public static int getMaxSpillere(){
+		return getInt("maxSpillere");
+	}
+	public static int getStartPenge(){
+		return getInt("startPenge");
+	}
 	public static int getInt(String key) {
-			return Integer.parseInt(RESOURCE_BUNDLE.getString(key));
+		return Integer.parseInt(RESOURCE_BUNDLE.getString(key));
 
 	}
-	
-	
+
+
 }
