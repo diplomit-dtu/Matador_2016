@@ -1,5 +1,7 @@
 package control;
 
+import model.Player;
+
 public class CreatePlayersAction extends Action {
 
 	public CreatePlayersAction(GameController gc) {
@@ -12,7 +14,8 @@ public class CreatePlayersAction extends Action {
 		int playerCount = ga.askForNumberOfPlayers();
 		
 		for(int i = 0; i < playerCount; i++){
-			
+			String name = ga.askForPlayerName(i);
+			new Player(name, balance)
 		}
 	}
 }
