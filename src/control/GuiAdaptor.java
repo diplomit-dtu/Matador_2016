@@ -15,7 +15,7 @@ public class GuiAdaptor {
 	}
 
 	public int askForNumberOfPlayers() {
-		
+		return gui.getUserInteger("Indtast antal spillere", 2, 6);
 
 	}
 
