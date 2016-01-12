@@ -26,9 +26,10 @@ public class CreateGuiPlayerAction extends Action {
 		GUI_Car.Pattern carPattern = ga.selectCarPattern(i, player);
 		
 		GUI_Car car = new GUI_Car(c1, c2, carType, carPattern);
-		GUI_Player gui_player = new GUI_Player(player.getName(), player.getBalance(), car);
-		ga.addPlayer(gui_player);
-		ga.setCarPosition(gc.getActivePlayer(), GameConstants.getStartPosition());
+		GUI_Player guiPlayer = new GUI_Player(player.getName(), player.getBalance(), car);
+		player.setGuiPlayer(guiPlayer);
+		ga.addPlayer(guiPlayer);
+		ga.setCarForPlayer(gc.getActivePlayer());
 	}
 
 	@Override
