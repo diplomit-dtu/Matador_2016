@@ -32,31 +32,31 @@ public class FieldVisitor extends Visitor {
 
 	@Override
 	public void visit(Street street) {
-		// TODO Auto-generated method stub
+		System.out.println("Landed on Street");
 
 	}
 
 	@Override
 	public void visit(Brewery brewery) {
-		// TODO Auto-generated method stub
+		System.out.println("Landed on Brewery");
 
 	}
 
 	@Override
 	public void visit(Shipping shipping) {
-		// TODO Auto-generated method stub
+		System.out.println("Landed on Shipping");
 
 	}
 
 	@Override
 	public void visit(ChanceField chanceField) {
-		// TODO Auto-generated method stub
+		System.out.println("Landed on ChanceField");
 
 	}
 
 	@Override
 	public void visit(TaxField taxField) {
-		// TODO Auto-generated method stub
+		System.out.println("Landed on TaxField");
 
 	}
 
