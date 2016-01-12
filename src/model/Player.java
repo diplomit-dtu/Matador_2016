@@ -89,4 +89,12 @@ public class Player {
 		inJail = true;
 		
 	}
+
+	@Override
+	public String toString() {
+		return "Player [id=" + id + ", name=" + name + ", account=" + account + ", inJail=" + inJail
+				+ ", sameEyesCount=" + sameEyesCount + ", guiPlayer=" + guiPlayer + ", position=" + position + "]";
+	}
+	
+	
 }
