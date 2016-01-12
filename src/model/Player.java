@@ -11,6 +11,7 @@ public class Player {
 	private String name;
 	private Account account;
 	private boolean inJail = false;
+	private boolean bankrupt = false;
 	private int sameEyesCount = 0;
 	private GUI_Player guiPlayer;
 	private int position; //0 indexed
@@ -95,6 +96,14 @@ public class Player {
 	public String toString() {
 		return "Player [id=" + id + ", name=" + name + ", account=" + account + ", inJail=" + inJail
 				+ ", sameEyesCount=" + sameEyesCount + ", guiPlayer=" + guiPlayer + ", position=" + position + "]";
+	}
+
+	public boolean isBankrupt() {
+		return bankrupt;
+	}
+
+	public void setBankrupt(boolean bankrupt) {
+		this.bankrupt = bankrupt;
 	}
 	
 	
