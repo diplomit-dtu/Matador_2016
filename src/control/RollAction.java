@@ -11,5 +11,7 @@ public class RollAction extends Action {
 	public void execute() {
 		gc.getDiceCup().roll();
 		gc.getGuiAdaptor().showDice(gc.getDiceCup().getD1().getValue(), gc.getDiceCup().getD2().getValue());
+		if (gc.getDiceCup().isSame()) gc.getActivePlayer().incrementSameRoll(); 
+		else gc.getActivePlayer().resetSameRoll();
 	}
 }

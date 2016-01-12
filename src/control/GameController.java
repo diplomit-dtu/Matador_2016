@@ -2,6 +2,7 @@ package control;
 import model.Field;
 import model.Player;
 import util.FieldFactory;
+import util.GameConstants;
 
 public class GameController {
 	//	private ChanceController cc;
@@ -12,6 +13,7 @@ public class GameController {
 	private boolean continuePlaying = true;
 	private Player activePlayer;
 	private DiceCup diceCup;
+	private int jailPosition;
 	
 	public GameController(){
 		init();
@@ -52,6 +54,15 @@ public class GameController {
 
 	public DiceCup getDiceCup() {
 		return diceCup;
+	}
+
+	public int getJailPosition() {
+		if (fields==null) return GameConstants.getErrorInt();
+		for (int i = 0; i < fields.length; i++) {
+			fields[i].accept(new JailVisitor(this));
+		}
+		return jailPosition;
+		
 	}
 
 

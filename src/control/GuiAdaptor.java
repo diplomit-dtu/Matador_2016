@@ -32,15 +32,15 @@ public class GuiAdaptor {
 	}
 
 	public String askForPlayerName(int i) {
-		return gui.getUserString("Indtast spillernavn");
+		return gui.getUserString(Messages.getString("GuiAdaptor.4")); //$NON-NLS-1$
 	}
 
 	public Color selectPrimaryColor(int i, Player player) {
-		return selectColor(player.getName() + ", Vælg forgrundsfarve", player);
+		return selectColor(player.getName() + Messages.getString("GuiAdaptor.5"), player); //$NON-NLS-1$
 	}
 
 	public Color selectSecondaryColor(int i, Player player) {
-		return selectColor(player.getName() +", Vælg baggrundsfarve", player);
+		return selectColor(player.getName() +Messages.getString("GuiAdaptor.6"), player); //$NON-NLS-1$
 	}
 	private Color selectColor(String string, Player player) {
 		Color[] colors = new Color[]{Color.BLACK, Color.BLUE, Color.GREEN, Color.RED, Color.YELLOW, Color.WHITE};
@@ -72,7 +72,7 @@ public class GuiAdaptor {
 		for (int j = 0; j < patternStrings.length; j++) {
 			patternStrings[j] = carPatterns[j].toString();
 		}
-		return Pattern.getPatternFromString(gui.getUserSelection(player.getName() + ", vælg bilens mønster", patternStrings));
+		return Pattern.getPatternFromString(gui.getUserSelection(player.getName() + Messages.getString("GuiAdaptor.7"), patternStrings)); //$NON-NLS-1$
 	}
 
 	public void addPlayer(GUI_Player gui_player) {
@@ -80,7 +80,7 @@ public class GuiAdaptor {
 	}
 		
 	public void removePlayer(GUI_Player guiPlayer) {
-		guiPlayer.setName("------");
+		guiPlayer.setName(Messages.getString("GuiAdaptor.8")); //$NON-NLS-1$
 	}
 
 	public boolean askForNewGame() {
@@ -110,6 +110,11 @@ public class GuiAdaptor {
 		for (GUI_Field guiField : gui.getFields()) {
 			guiField.setCar(player.getGuiPlayer(), false);
 		}
+	}
+
+	public void showPlayerTurnStart(Player player) {
+		gui.showMessage(player.getName() + Messages.getString("GuiAdaptor.9")); //$NON-NLS-1$
+		
 	}
 
 	

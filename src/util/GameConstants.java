@@ -29,5 +29,17 @@ public class GameConstants {
 		return getInt("startPosition");
 	}
 
+	public static int getMaxAllowedSameRolls() {
+		// TODO Auto-generated method stub
+		return getInt("maxAllowedSameRolls");
+	}
+
+	public static int getErrorInt() {
+		// TODO Auto-generated method stub
+		return getInt("errorInt");
+	}
+
+	
+
 
 }

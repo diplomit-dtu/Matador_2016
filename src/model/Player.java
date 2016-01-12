@@ -3,6 +3,7 @@ package model;
 import javax.swing.text.Position;
 
 import gui_fields.GUI_Player;
+import util.GameConstants;
 
 public class Player {
 	private static int nextId = 0;
@@ -62,5 +63,30 @@ public class Player {
 
 	public void setPosition(int position) {
 		this.position = position;
+	}
+
+	public void move(int distance) {
+		position+=distance;
+		
+	}
+
+	public void incrementSameRoll() {
+		sameEyesCount++;
+		
+	}
+
+	public void resetSameRoll() {
+		sameEyesCount=0;
+		
+	}
+
+	public boolean tooManySameRolls() {
+		if (sameEyesCount>=GameConstants.getMaxAllowedSameRolls()) return true;
+		return false;
+	}
+
+	public void goToJail() {
+		inJail = true;
+		
 	}
 }
