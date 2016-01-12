@@ -1,12 +1,14 @@
 package control;
 
 import model.fields.Brewery;
+import model.fields.ChanceField;
 import model.fields.Field;
 import model.fields.GoToJailField;
 import model.fields.Refuge;
 import model.fields.Ownable;
 import model.fields.Shipping;
 import model.fields.Street;
+import model.fields.TaxField;
 @Deprecated
 public class JailVisitor extends Visitor {
 
@@ -16,7 +18,7 @@ public class JailVisitor extends Visitor {
 	}
 	@Override
 	public void visit(Refuge j){
-		System.out.println("Jail Visited");
+		//TODO
 	}
 	@Override
 	public void visit(GoToJailField g){
@@ -39,6 +41,16 @@ public class JailVisitor extends Visitor {
 	}
 	@Override
 	public void visit(Shipping shipping) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void visit(ChanceField chanceField) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void visit(TaxField taxField) {
 		// TODO Auto-generated method stub
 		
 	}
