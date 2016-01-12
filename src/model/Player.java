@@ -1,12 +1,15 @@
 package model;
 
+import gui_fields.GUI_Player;
+
 public class Player {
 	private static int nextId = 0;
 	private int id;
 	private String name;
 	private Account account;
 	private boolean inJail = false;
-	private int sameEyes = 0;
+	private int sameEyesCount = 0;
+	private GUI_Player guiPlayer;
 	
 	public Player(String name, int balance){
 		this.name = name;

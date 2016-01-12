@@ -87,8 +87,8 @@ public class GuiAdaptor {
 		gui.setDice(d1, d2);
 	}
 
-	public void setCarPosition(Player activePlayer, int startPosition) {
-		//Need gui method!!!
+	public void setCarPosition(Player activePlayer, int position) {
+		gui.
 	}
 	
 	
