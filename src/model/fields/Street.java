@@ -7,10 +7,9 @@ public class Street extends Ownable {
 	private int[] rents;
 	private int noHouses;	
 
-	public Street(int[] rents, String name, int price) {
+	public Street(int[] rents, String name, int price, int housePrice) {
 		super(name,price);
 		this.rents = rents;
-
 	}
 
 	@Override
@@ -22,8 +21,8 @@ public class Street extends Ownable {
 		if (noHouses>=rents.length) return false;
 		noHouses++;
 		return true;
-		
 	}
+		
 	public boolean removeHouse(){
 		if (noHouses<=0) return false;
 		noHouses--;
@@ -33,5 +32,4 @@ public class Street extends Ownable {
 	public int getRent() {
 		return rents[noHouses];
 	}
-
 }
