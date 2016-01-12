@@ -7,18 +7,11 @@ public class PlayerTurnAction extends Action {
 	}
 
 	@Override
-	protected void doAction() {
+	public void execute() {
 		if (gc.getActivePlayer().isInJail()){
 			new JailTurnAction(gc).execute();
 		} else {
 			new RollAndMoveAction(gc).execute();
 		}
 	}
-
-	@Override
-	protected void undoAction() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }
