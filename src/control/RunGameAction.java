@@ -10,7 +10,7 @@ public class RunGameAction extends Action {
 
 	@Override
 	public void execute() {
-		new SetupPlayersAction(gc).execute();
+		new SetupPlayersAction(gc, true).execute();
 		System.out.println(gc.getPlayers());
 		do{
 			for (Player player : gc.getPlayers()) {

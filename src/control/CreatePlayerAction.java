@@ -16,8 +16,22 @@ public class CreatePlayerAction extends Action {
 
 	@Override
 	public void execute() {
-		GuiAdaptor ga = gc.getGuiAdaptor();
-		String name = ga.askForPlayerName();
+		String name = null;
+		if(quick){
+			for(int i = 0; i < gc.getPlayers().length; i++){
+				if(gc.getPlayers()[i] == null){
+					name = "Player"+i;
+					break;
+				}
+			}
+			if(name == null){
+				System.err.println("Unable to auto-create player");
+				return;
+			}
+		} else {
+			GuiAdaptor ga = gc.getGuiAdaptor();
+			name = ga.askForPlayerName();
+		}
 		Player player;
 		if(quick){
 			player = new Player(name, GameConstants.getStartPenge(), GameConstants.getStartPosition());
