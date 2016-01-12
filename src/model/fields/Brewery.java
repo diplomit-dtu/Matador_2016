@@ -1,8 +1,8 @@
-package model;
+package model.fields;
 
 import control.Visitor;
 
-public class Jail extends Field {
+public class Brewery extends Field {
 
 	@Override
 	public void accept(Visitor v) {

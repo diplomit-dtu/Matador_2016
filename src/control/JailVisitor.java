@@ -1,17 +1,46 @@
 package control;
 
-import model.Field;
-import model.Jail;
-
+import model.fields.Brewery;
+import model.fields.Field;
+import model.fields.GoToJail;
+import model.fields.Refuge;
+import model.fields.Ownable;
+import model.fields.Shipping;
+import model.fields.Street;
+@Deprecated
 public class JailVisitor extends Visitor {
 
 	private GameController gc;
 	public JailVisitor(GameController gameController) {
 		this.gc = gameController;
 	}
-
-	public void visit(Jail j){
+	@Override
+	public void visit(Refuge j){
 		System.out.println("Jail Visited");
+	}
+	@Override
+	public void visit(GoToJail g){
+		
+	}
+	@Override
+	public void visit(Ownable ownable) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void visit(Street street) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void visit(Brewery brewery) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void visit(Shipping shipping) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

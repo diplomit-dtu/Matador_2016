@@ -1,4 +1,4 @@
-package model;
+package model.fields;
 
 import control.Visitor;
 
