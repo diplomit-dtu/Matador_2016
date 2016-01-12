@@ -15,8 +15,14 @@ public class SetupPlayersAction extends Action {
 
 	@Override
 	public void execute() {
-		GuiAdaptor ga = gc.getGuiAdaptor();
-		int playerCount = ga.askForNumberOfPlayers();
+		int playerCount;
+		if(quick){
+			playerCount = 3;
+		} else {
+			GuiAdaptor ga = gc.getGuiAdaptor();
+			playerCount = ga.askForNumberOfPlayers();
+			
+		}
 		Player[] players = new Player[playerCount];
 		gc.setPlayers(players);
 		
