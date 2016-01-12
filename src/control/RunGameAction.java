@@ -6,7 +6,6 @@ public class RunGameAction extends Action {
 
 	public RunGameAction(GameController gc) {
 		super(gc);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -18,7 +17,7 @@ public class RunGameAction extends Action {
 				gc.setActivePlayer(player);
 				new PlayerTurnAction(gc).execute();
 			}
-		} while(true);
+		} while(gc.getGameOver());
 
 	}
 }
