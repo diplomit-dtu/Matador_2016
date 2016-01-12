@@ -8,11 +8,18 @@ import gui_fields.GUI_Field;
 import gui_fields.GUI_Player;
 import gui_main.GUI;
 import model.Player;
+import model.fields.Field;
 import util.GameConstants;
 import util.Messages;
 
 public class GuiAdaptor {
 	private GUI gui;
+	public GuiAdaptor(Field[] fields){
+		GUI_Field[] gui_fields = new GUI_Field[fields.length];
+		for (int i =0; i<fields.length;i++) {
+			gui_fields[i]= fields[i].getGuiField();
+		}
+	}
 
 	public GuiAdaptor(){
 		// Default GUI

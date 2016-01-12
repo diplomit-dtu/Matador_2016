@@ -1,6 +1,7 @@
 package model.fields;
 
 import control.Visitor;
+import gui_fields.GUI_Field;
 
 public abstract class Field {
 	private String name;
@@ -13,6 +14,11 @@ public abstract class Field {
 
 	public String getName() {
 		return name;
+	}
+	
+	public GUI_Field getGuiField(){
+		return null;
+		
 	}
 
 
