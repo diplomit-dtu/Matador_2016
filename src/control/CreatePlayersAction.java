@@ -22,7 +22,7 @@ public class CreatePlayersAction extends Action {
 		for(int i = 0; i < playerCount; i++){
 			String name = ga.askForPlayerName(i);
 			int balance = GameConstants.getStartPenge();
-			Player player = new Player(name, balance);
+			Player player = new Player(name, balance, GameConstants.getStartPosition());
 			players[i] = player;
 			
 			guiActions[i] = new CreateGuiPlayerAction(gc, i, player);

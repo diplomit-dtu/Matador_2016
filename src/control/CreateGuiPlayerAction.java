@@ -5,6 +5,7 @@ import java.awt.Color;
 import gui_fields.GUI_Car;
 import gui_fields.GUI_Player;
 import model.Player;
+import util.GameConstants;
 
 public class CreateGuiPlayerAction extends Action {
 	private int i;
@@ -26,8 +27,10 @@ public class CreateGuiPlayerAction extends Action {
 		GUI_Car.Pattern carPattern = ga.selectCarPattern(i, player);
 		
 		GUI_Car car = new GUI_Car(c1, c2, carType, carPattern);
-		GUI_Player gui_player = new GUI_Player(player.getName(), player.getBalance(), car);
-		ga.addPlayer(gui_player);
+		GUI_Player guiPlayer = new GUI_Player(player.getName(), player.getBalance(), car);
+		player.setGuiPlayer(guiPlayer);
+		ga.addPlayer(guiPlayer);
+		ga.setCarForPlayer(player);
 	}
 
 	@Override

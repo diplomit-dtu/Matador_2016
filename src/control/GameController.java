@@ -8,8 +8,7 @@ public class GameController {
 	//	private FieldVisitor visitor;
 	private GuiAdaptor ga;
 	private Player[] players;
-	Field[] fields;
-	Action currentAction;
+	private Field[] fields;
 	private boolean continuePlaying = true;
 	private Player activePlayer;
 	private DiceCup diceCup;

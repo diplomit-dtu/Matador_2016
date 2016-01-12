@@ -2,7 +2,6 @@ package control;
 import java.awt.Color;
 
 import gui_codebehind.GUI_FieldFactory;
-import gui_fields.GUI_Car;
 import gui_fields.GUI_Car.Pattern;
 import gui_fields.GUI_Car.Type;
 import gui_fields.GUI_Field;
@@ -86,6 +85,27 @@ public class GuiAdaptor {
 
 	public void showDice(int d1, int d2) {
 		gui.setDice(d1, d2);
+	}
+
+	public void setCarForPlayer(Player player) {
+		
+		GUI_Field gField = gui.getFields()[player.getPosition()];
+				gField.setCar(player.getGuiPlayer(), true);
+	}
+	
+	public void removeCarAtPosition(Player player){
+		GUI_Field gField = gui.getFields()[player.getPosition()];
+				gField.setCar(player.getGuiPlayer(), false);
+	}
+	
+	public void updateCarPosition(Player player){
+		removeAllCarsForPlayer(player);
+		setCarForPlayer(player);
+	}
+	public void removeAllCarsForPlayer(Player player){
+		for (GUI_Field guiField : gui.getFields()) {
+			guiField.setCar(player.getGuiPlayer(), false);
+		}
 	}
 	
 	
