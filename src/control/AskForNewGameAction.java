@@ -7,18 +7,11 @@ public class AskForNewGameAction extends Action {
 	}
 
 	@Override
-	public void doAction() {
+	public void execute() {
 		if (!gc.getGuiAdaptor().askForNewGame()) gc.stopPlaying();
 		else {
 			//ASK for reset or same players
 			
 		}
 	}
-
-	@Override
-	public void undoAction() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

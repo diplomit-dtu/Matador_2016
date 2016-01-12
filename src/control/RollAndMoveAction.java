@@ -7,15 +7,7 @@ public class RollAndMoveAction extends Action {
 	}
 
 	@Override
-	protected void doAction() {
+	public void execute() {
 		new RollAction(gc).execute();
 	}
-
-
-	@Override
-	protected void undoAction() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

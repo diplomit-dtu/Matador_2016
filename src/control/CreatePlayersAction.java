@@ -13,7 +13,7 @@ public class CreatePlayersAction extends Action {
 	}
 
 	@Override
-	protected void doAction() {
+	public void execute() {
 		GuiAdaptor ga = gc.getGuiAdaptor();
 		playerCount = ga.askForNumberOfPlayers();
 		players = new Player[playerCount];
@@ -29,13 +29,5 @@ public class CreatePlayersAction extends Action {
 			guiActions[i].execute();
 		}
 		gc.setPlayers(players);
-	}
-
-	@Override
-	protected void undoAction() {
-		for(int i = playerCount -1; i >= 0; i++){
-			guiActions[i].undoAction();
-		}
-		gc.setPlayers(null);
 	}
 }
