@@ -1,6 +1,6 @@
 package control;
-import model.Field;
 import model.Player;
+import model.fields.Field;
 import util.FieldFactory;
 import util.GameConstants;
 

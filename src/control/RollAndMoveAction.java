@@ -9,6 +9,6 @@ public class RollAndMoveAction extends Action {
 	@Override
 	public void execute() {
 		new RollAction(gc).execute();
-		new MoveActiceDiceRollAction(gc).execute();
+		new MoveActiveDiceRollAction(gc).execute();
 	}
 }

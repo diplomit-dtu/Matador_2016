@@ -2,9 +2,9 @@ package control;
 
 import model.Player;
 
-public class MoveActiceDiceRollAction extends Action {
+public class MoveActiveDiceRollAction extends Action {
 
-	public MoveActiceDiceRollAction(GameController gc) {
+	public MoveActiveDiceRollAction(GameController gc) {
 		super(gc);
 		// TODO Auto-generated constructor stub
 	}

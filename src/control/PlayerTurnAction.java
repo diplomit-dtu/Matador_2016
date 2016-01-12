@@ -18,7 +18,7 @@ public class PlayerTurnAction extends Action {
 			new JailTurnAction(gc).execute();
 		} else {
 			//Loop while extraTurn
-			boolean extraTurn = false;
+			boolean extraTurn;
 			do {
 				extraTurn = false;
 				new RollAndMoveAction(gc).execute();

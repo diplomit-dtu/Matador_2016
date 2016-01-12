@@ -1,5 +1,5 @@
 package util;
-import model.Field;
+import model.fields.Field;
 
 public class FieldFactory {
 
