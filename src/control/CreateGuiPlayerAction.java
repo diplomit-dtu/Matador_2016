@@ -7,23 +7,21 @@ import gui_fields.GUI_Player;
 import model.Player;
 
 public class CreateGuiPlayerAction extends Action {
-	private int i;
-	private Player player;
 	private GuiAdaptor ga;
+	private Player player;
 
-	public CreateGuiPlayerAction(GameController gc, int i, Player player) {
+	public CreateGuiPlayerAction(GameController gc, Player player) {
 		super(gc);
-		this.i = i;
 		this.player = player;
 		ga = gc.getGuiAdaptor();
 	}
 
 	@Override
 	public void execute() {
-		Color c1 = ga.selectPrimaryColor(i, player);
-		Color c2 = ga.selectSecondaryColor(i, player);
-		GUI_Car.Type carType = ga.selectCarType(i, player);
-		GUI_Car.Pattern carPattern = ga.selectCarPattern(i, player);
+		Color c1 = ga.selectPrimaryColor(player);
+		Color c2 = ga.selectSecondaryColor(player);
+		GUI_Car.Type carType = ga.selectCarType(player);
+		GUI_Car.Pattern carPattern = ga.selectCarPattern(player);
 		
 		GUI_Car car = new GUI_Car(c1, c2, carType, carPattern);
 		GUI_Player guiPlayer = new GUI_Player(player.getName(), player.getBalance(), car);

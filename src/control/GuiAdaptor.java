@@ -80,7 +80,7 @@ public class GuiAdaptor {
 	}
 		
 	public void removePlayer(GUI_Player guiPlayer) {
-		guiPlayer.setName(Messages.getString("GuiAdaptor.8")); //$NON-NLS-1$
+		guiPlayer.setName("------");
 	}
 
 	public boolean askForNewGame() {

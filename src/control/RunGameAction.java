@@ -11,7 +11,7 @@ public class RunGameAction extends Action {
 
 	@Override
 	public void execute() {
-		new CreatePlayersAction(gc).execute();
+		new SetupPlayersAction(gc).execute();
 		System.out.println(gc.getPlayers());
 		for (Player player : gc.getPlayers()) {
 			gc.setActivePlayer(player);
