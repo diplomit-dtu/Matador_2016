@@ -67,6 +67,7 @@ public class Player {
 
 	public void move(int distance) {
 		position+=distance;
+		position%=40;
 		
 	}
 

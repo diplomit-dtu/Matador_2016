@@ -117,6 +117,11 @@ public class GuiAdaptor {
 		
 	}
 
+	public void showExtraTurn(Player p) {
+		gui.showMessage(p.getName() + ", du får en ekstra tur");
+		
+	}
+
 	
 	
 

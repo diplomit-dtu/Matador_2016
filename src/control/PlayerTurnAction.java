@@ -1,5 +1,7 @@
 package control;
 
+import model.Player;
+
 public class PlayerTurnAction extends Action {
 
 	public PlayerTurnAction(GameController gc) {
@@ -8,18 +10,23 @@ public class PlayerTurnAction extends Action {
 
 	@Override
 	public void execute() {
-		if (gc.getActivePlayer().isInJail()){
+		Player activePlayer = gc.getActivePlayer();
+		if (activePlayer.isInJail()){
 			new JailTurnAction(gc).execute();
 		} else {
-			gc.getGuiAdaptor().showPlayerTurnStart(gc.getActivePlayer());
+			gc.getGuiAdaptor().showPlayerTurnStart(activePlayer);
 			boolean extraTurn = false;
 			do {
-			new RollAndMoveAction(gc).execute();
-			if (gc.getDiceCup().isSame()) extraTurn = true;
-			if (gc.getActivePlayer().tooManySameRolls()){
 				extraTurn = false;
-				new GotoJailAction(gc).execute();
-			}
+				new RollAndMoveAction(gc).execute();
+				if (gc.getDiceCup().isSame()) {
+					extraTurn = true;
+					gc.getGuiAdaptor().showExtraTurn(activePlayer);
+				}
+				if (activePlayer.tooManySameRolls()){
+					extraTurn = false;
+					new GotoJailAction(gc).execute();
+				}
 			} while (extraTurn);
 		}
 	}
