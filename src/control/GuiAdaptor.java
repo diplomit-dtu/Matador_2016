@@ -2,7 +2,6 @@ package control;
 import java.awt.Color;
 
 import gui_codebehind.GUI_FieldFactory;
-import gui_fields.GUI_Car;
 import gui_fields.GUI_Car.Pattern;
 import gui_fields.GUI_Car.Type;
 import gui_fields.GUI_Field;
@@ -86,6 +85,10 @@ public class GuiAdaptor {
 
 	public void showDice(int d1, int d2) {
 		gui.setDice(d1, d2);
+	}
+
+	public void setCarPosition(Player activePlayer, int startPosition) {
+		//Need gui method!!!
 	}
 	
 	

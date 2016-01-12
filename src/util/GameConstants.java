@@ -25,5 +25,9 @@ public class GameConstants {
 
 	}
 
+	public static int getStartPosition() {
+		return getInt("startPosition");
+	}
+
 
 }
