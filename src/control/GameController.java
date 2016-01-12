@@ -73,6 +73,10 @@ public class GameController {
 		return noLeft <=1;
 	}
 
+	public Field getCurrentField() {
+		return fields[getActivePlayer().getPosition()];
+	}
+
 
 
 }

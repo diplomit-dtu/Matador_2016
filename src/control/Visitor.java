@@ -13,7 +13,6 @@ import model.fields.TaxField;
 public abstract class Visitor {
 	public abstract void visit(Refuge jail);
 	public abstract void visit(GoToJailField goToJail);
-	public abstract void visit(Ownable ownable);
 	public abstract void visit(Street street);
 	public abstract void visit(Brewery brewery);
 	public abstract void visit(Shipping shipping);
