@@ -79,6 +79,10 @@ public class GuiAdaptor {
 		gui.addPlayer(gui_player);
 	}
 		
+	public void removePlayer(GUI_Player guiPlayer) {
+		guiPlayer.setName("------");
+	}
+
 	public boolean askForNewGame() {
 		return gui.getUserLeftButtonPressed(Messages.getString("GuiAdaptor.0"), Messages.getString("GuiAdaptor.1"), Messages.getString("GuiAdaptor.3")); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 	}
@@ -107,6 +111,7 @@ public class GuiAdaptor {
 			guiField.setCar(player.getGuiPlayer(), false);
 		}
 	}
+
 	
 	
 
