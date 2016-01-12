@@ -4,6 +4,9 @@ import model.Player;
 import util.GameConstants;
 
 public class CreatePlayersAction extends Action {
+	private int playerCount;
+	private Player[] players;
+	private CreateGuiPlayerAction[] guiActions;
 
 	public CreatePlayersAction(GameController gc) {
 		super(gc);
@@ -12,8 +15,9 @@ public class CreatePlayersAction extends Action {
 	@Override
 	protected void doAction() {
 		GuiAdaptor ga = gc.getGuiAdaptor();
-		int playerCount = ga.askForNumberOfPlayers();
-		Player[] players = new Player[playerCount];
+		playerCount = ga.askForNumberOfPlayers();
+		players = new Player[playerCount];
+		guiActions = new CreateGuiPlayerAction[playerCount];
 		
 		for(int i = 0; i < playerCount; i++){
 			String name = ga.askForPlayerName(i);
@@ -21,14 +25,17 @@ public class CreatePlayersAction extends Action {
 			Player player = new Player(name, balance, GameConstants.getStartPosition());
 			players[i] = player;
 			
-			new CreateGuiPlayerAction(gc, i, player).execute();
+			guiActions[i] = new CreateGuiPlayerAction(gc, i, player);
+			guiActions[i].execute();
 		}
 		gc.setPlayers(players);
 	}
 
 	@Override
 	protected void undoAction() {
-		// TODO Auto-generated method stub
-		
+		for(int i = playerCount -1; i >= 0; i++){
+			guiActions[i].undoAction();
+		}
+		gc.setPlayers(null);
 	}
 }

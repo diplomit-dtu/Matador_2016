@@ -37,7 +37,7 @@ public class GameController {
 	public GuiAdaptor getGuiAdaptor() { return ga; }
 	//Getters and setters
 	public Player[] getPlayers() {		return players;	}
-	public void setPlayers(Player[] players) {		this.players = players;	}
+	public void setPlayers(Player[] players) { this.players = players; }
 	//Set gameState to STOP!
 	public void stopPlaying() { this.continuePlaying = false;}
 

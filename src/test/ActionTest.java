@@ -2,6 +2,7 @@ package test;
 
 import control.Action;
 import control.GameController;
+import gui_main.GUI;
 
 public class ActionTest {
 	int sum = 0;

@@ -10,16 +10,17 @@ import util.GameConstants;
 public class CreateGuiPlayerAction extends Action {
 	private int i;
 	private Player player;
+	private GuiAdaptor ga;
 
 	public CreateGuiPlayerAction(GameController gc, int i, Player player) {
 		super(gc);
 		this.i = i;
 		this.player = player;
+		ga = gc.getGuiAdaptor();
 	}
 
 	@Override
 	public void doAction() {
-		GuiAdaptor ga = gc.getGuiAdaptor();
 		Color c1 = ga.selectPrimaryColor(i, player);
 		Color c2 = ga.selectSecondaryColor(i, player);
 		GUI_Car.Type carType = ga.selectCarType(i, player);
@@ -34,7 +35,7 @@ public class CreateGuiPlayerAction extends Action {
 
 	@Override
 	public void undoAction() {
-		// TODO Auto-generated method stub
+		ga.removePlayer(player.getGuiPlayer());
 		
 	}
 
