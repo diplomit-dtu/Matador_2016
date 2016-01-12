@@ -10,7 +10,7 @@ public class PlayerTest {
 		
 		Player p = new Player("Anders And", 1000, 2);
 		
-		new CreateGuiPlayerAction(new GameController(), 1, p).execute();
+		new CreateGuiPlayerAction(new GameController(), p).execute();
 	}
 
 }

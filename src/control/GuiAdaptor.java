@@ -31,15 +31,15 @@ public class GuiAdaptor {
 		return minSpillere;
 	}
 
-	public String askForPlayerName(int i) {
+	public String askForPlayerName() {
 		return gui.getUserString("Indtast spillernavn");
 	}
 
-	public Color selectPrimaryColor(int i, Player player) {
+	public Color selectPrimaryColor(Player player) {
 		return selectColor(player.getName() + ", Vælg forgrundsfarve", player);
 	}
 
-	public Color selectSecondaryColor(int i, Player player) {
+	public Color selectSecondaryColor(Player player) {
 		return selectColor(player.getName() +", Vælg baggrundsfarve", player);
 	}
 	private Color selectColor(String string, Player player) {
@@ -55,7 +55,7 @@ public class GuiAdaptor {
 		return Color.BLUE;
 	}
 	
-	public Type selectCarType(int i, Player player) {
+	public Type selectCarType(Player player) {
 		Type[] carTypes = Type.values();
 		String[] carStrings = new String[carTypes.length];
 		for (int j = 0; j < carStrings.length; j++) {
@@ -66,7 +66,7 @@ public class GuiAdaptor {
 		
 	}
 
-	public Pattern selectCarPattern(int i, Player player) {
+	public Pattern selectCarPattern(Player player) {
 		Pattern[] carPatterns = Pattern.values();
 		String[] patternStrings = new String[carPatterns.length];
 		for (int j = 0; j < patternStrings.length; j++) {

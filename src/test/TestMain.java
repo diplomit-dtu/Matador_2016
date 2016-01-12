@@ -2,7 +2,7 @@ package test;
 
 import control.Action;
 import control.AskForNewGameAction;
-import control.CreatePlayersAction;
+import control.SetupPlayersAction;
 import control.GameController;
 import control.GuiAdaptor;
 import control.RollAction;
