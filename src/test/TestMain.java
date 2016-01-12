@@ -5,12 +5,12 @@ import control.AskForNewGameAction;
 import control.SetupPlayersAction;
 import control.GameController;
 import control.GuiAdaptor;
-import control.Jail;
 import control.JailVisitor;
 import control.RollAction;
 import control.Visitor;
 import gui_main.GUI;
 import model.Field;
+import model.Jail;
 import util.GameConstants;
 
 public class TestMain {

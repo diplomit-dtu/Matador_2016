@@ -14,8 +14,10 @@ public class RunGameAction extends Action {
 		System.out.println(gc.getPlayers());
 		do{
 			for (Player player : gc.getPlayers()) {
-				gc.setActivePlayer(player);
-				new PlayerTurnAction(gc).execute();
+				if (!player.isBankrupt()){
+					gc.setActivePlayer(player);
+					new PlayerTurnAction(gc).execute();
+				}
 			}
 		} while(gc.getGameOver());
 

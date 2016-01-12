@@ -1,6 +1,6 @@
-package control;
+package model;
 
-import model.Field;
+import control.Visitor;
 
 public class Jail extends Field {
 

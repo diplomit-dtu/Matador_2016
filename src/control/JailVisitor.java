@@ -1,6 +1,7 @@
 package control;
 
 import model.Field;
+import model.Jail;
 
 public class JailVisitor extends Visitor {
 

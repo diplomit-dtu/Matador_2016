@@ -65,6 +65,14 @@ public class GameController {
 		
 	}
 
+	public boolean getGameOver() {
+		int noLeft = 0;
+		for (Player player : players) {
+			if (!player.isBankrupt()) noLeft++;
+		}
+		return noLeft <=1;
+	}
+
 
 
 }

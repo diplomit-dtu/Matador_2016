@@ -122,6 +122,11 @@ public class GuiAdaptor {
 		
 	}
 
+	public void showTooManySameRolls(Player p) {
+		gui.showMessage(p.getName() + ", du har slået for mange ens i træk - du ryger i fængsel!");
+		
+	}
+
 	
 	
 

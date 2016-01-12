@@ -10,23 +10,27 @@ public class PlayerTurnAction extends Action {
 
 	@Override
 	public void execute() {
+		//get active player
 		Player activePlayer = gc.getActivePlayer();
+		//Show start turn
+		gc.getGuiAdaptor().showPlayerTurnStart(activePlayer);
 		if (activePlayer.isInJail()){
 			new JailTurnAction(gc).execute();
 		} else {
-			gc.getGuiAdaptor().showPlayerTurnStart(activePlayer);
+			//Loop while extraTurn
 			boolean extraTurn = false;
 			do {
 				extraTurn = false;
 				new RollAndMoveAction(gc).execute();
+				if (activePlayer.tooManySameRolls()){
+					gc.getGuiAdaptor().showTooManySameRolls(activePlayer);
+					new GotoJailAction(gc).execute();
+				}
 				if (gc.getDiceCup().isSame()) {
 					extraTurn = true;
 					gc.getGuiAdaptor().showExtraTurn(activePlayer);
 				}
-				if (activePlayer.tooManySameRolls()){
-					extraTurn = false;
-					new GotoJailAction(gc).execute();
-				}
+
 			} while (extraTurn);
 		}
 	}
