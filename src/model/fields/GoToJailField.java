@@ -2,11 +2,10 @@ package model.fields;
 
 import control.Visitor;
 
-public class Refuge extends Field {
+public class GoToJailField extends Field {
 
-	public Refuge(String name) {
+	public GoToJailField(String name) {
 		super(name);
-		
 	}
 
 	@Override

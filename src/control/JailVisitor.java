@@ -2,7 +2,7 @@ package control;
 
 import model.fields.Brewery;
 import model.fields.Field;
-import model.fields.GoToJail;
+import model.fields.GoToJailField;
 import model.fields.Refuge;
 import model.fields.Ownable;
 import model.fields.Shipping;
@@ -19,7 +19,7 @@ public class JailVisitor extends Visitor {
 		System.out.println("Jail Visited");
 	}
 	@Override
-	public void visit(GoToJail g){
+	public void visit(GoToJailField g){
 		
 	}
 	@Override
