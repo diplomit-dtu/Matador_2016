@@ -1,12 +1,13 @@
 package model.fields;
 
 import control.Visitor;
+import gui_fields.GUI_Shipping;
 
 public class Shipping extends Ownable {
 	private int baseRent;
 
-	public Shipping(String name, int price, int baseRent) {
-		super(name, price);
+	public Shipping(GUI_Shipping guiField, int price, int baseRent) {
+		super(guiField, price);
 		this.baseRent=baseRent;
 	}
 

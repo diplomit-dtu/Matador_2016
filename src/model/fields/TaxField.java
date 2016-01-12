@@ -1,11 +1,12 @@
 package model.fields;
 
 import control.Visitor;
+import gui_fields.GUI_Tax;
 
 public class TaxField extends Field {
 
-	public TaxField(String name) {
-		super(name);
+	public TaxField(GUI_Tax guiField) {
+		super(guiField);
 	}
 
 	@Override

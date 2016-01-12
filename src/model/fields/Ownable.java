@@ -1,15 +1,15 @@
 package model.fields;
 
 import control.Visitor;
+import gui_fields.GUI_Ownable;
 import model.Player;
 
 public abstract class Ownable extends Field {
 	private int price;
 	private Player owner = null;
 	
-	
-	public Ownable(String name, int price) {
-		super(name);
+	public Ownable(GUI_Ownable guiField, int price) {
+		super(guiField);
 		this.price = price;
 	}
 

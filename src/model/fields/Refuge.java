@@ -1,12 +1,12 @@
 package model.fields;
 
 import control.Visitor;
+import gui_fields.GUI_Refuge;
 
 public class Refuge extends Field {
 
-	public Refuge(String name) {
-		super(name);
-		
+	public Refuge(GUI_Refuge guiField) {
+		super(guiField);
 	}
 
 	@Override

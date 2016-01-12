@@ -1,11 +1,12 @@
 package model.fields;
 
 import control.Visitor;
+import gui_fields.GUI_Chance;
 
 public class ChanceField extends Field {
 
-	public ChanceField(String name) {
-		super(name);
+	public ChanceField(GUI_Chance guiField) {
+		super(guiField);
 	}
 
 	@Override

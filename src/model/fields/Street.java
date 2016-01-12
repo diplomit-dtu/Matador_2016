@@ -1,14 +1,15 @@
 package model.fields;
 
 import control.Visitor;
+import gui_fields.GUI_Street;
 
 public class Street extends Ownable {
 
 	private int[] rents;
 	private int noHouses;	
 
-	public Street(int[] rents, String name, int price, int housePrice) {
-		super(name,price);
+	public Street(GUI_Street guiField, int[] rents, String name, int price, int housePrice) {
+		super(guiField, price);
 		this.rents = rents;
 	}
 

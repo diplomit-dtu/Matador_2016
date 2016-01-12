@@ -1,11 +1,12 @@
 package model.fields;
 
 import control.Visitor;
+import gui_fields.GUI_Jail;
 
 public class GoToJailField extends Field {
 
-	public GoToJailField(String name) {
-		super(name);
+	public GoToJailField(GUI_Jail guiField) {
+		super(guiField);
 	}
 
 	@Override

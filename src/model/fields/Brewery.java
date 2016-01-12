@@ -1,13 +1,14 @@
 package model.fields;
 
 import control.Visitor;
+import gui_fields.GUI_Brewery;
 
 public class Brewery extends Ownable {
 
 	private int baseRent;
 
-	public Brewery(String name, int price, int baseRent ) {
-		super(name, price);
+	public Brewery(GUI_Brewery guiField, int price, int baseRent ) {
+		super(guiField, price);
 		this.baseRent = baseRent;
 	}
 
