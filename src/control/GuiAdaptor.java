@@ -87,12 +87,14 @@ public class GuiAdaptor {
 		gui.setDice(d1, d2);
 	}
 
-	public void setCarForPlayer(Player activePlayer) {
-		gui.getFields()[activePlayer.getPosition()].setCar(activePlayer.getGuiPlayer(), true);
+	public void setCarForPlayer(Player player) {
+		GUI_Field gField = gui.getFields()[player.getPosition()];
+				gField.setCar(player.getGuiPlayer(), true);
 	}
 	
-	public void removeCarAtPosition(Player activePlayer){
-		gui.getFields()[activePlayer.getPosition()].setCar(activePlayer.getGuiPlayer(), false);
+	public void removeCarAtPosition(Player player){
+		GUI_Field gField = gui.getFields()[player.getPosition()];
+				gField.setCar(player.getGuiPlayer(), false);
 	}
 	
 	

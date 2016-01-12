@@ -6,7 +6,7 @@ import gui_fields.GUI_Player;
 
 public class Player {
 	private static int nextId = 0;
-	private int id;
+	private int id; //Bare fordi
 	private String name;
 	private Account account;
 	private boolean inJail = false;
@@ -14,10 +14,11 @@ public class Player {
 	private GUI_Player guiPlayer;
 	private int position; //0 indexed
 
-	public Player(String name, int balance){
+	public Player(String name, int balance, int position){
 		this.name = name;
 		this.account = new Account(balance);
 		this.id = nextId++;
+		this.position=position;
 	}
 
 	public int getId() {

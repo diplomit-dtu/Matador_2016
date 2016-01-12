@@ -29,7 +29,7 @@ public class CreateGuiPlayerAction extends Action {
 		GUI_Player guiPlayer = new GUI_Player(player.getName(), player.getBalance(), car);
 		player.setGuiPlayer(guiPlayer);
 		ga.addPlayer(guiPlayer);
-		ga.setCarForPlayer(gc.getActivePlayer());
+		ga.setCarForPlayer(player);
 	}
 
 	@Override

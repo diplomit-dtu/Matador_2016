@@ -8,7 +8,8 @@ public class PlayerTest {
 	
 	public static void main(String[] args) {
 		
-		Player p = new Player("Anders And", 1000);
+		Player p = new Player("Anders And", 1000, 2);
+		
 		new CreateGuiPlayerAction(new GameController(), 1, p).execute();
 	}
 
