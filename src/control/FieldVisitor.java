@@ -33,7 +33,7 @@ public class FieldVisitor extends Visitor {
 	@Override
 	public void visit(Street street) {
 		System.out.println("Landed on Street");
-
+		
 	}
 
 	@Override

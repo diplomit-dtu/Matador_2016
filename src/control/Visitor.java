@@ -16,7 +16,7 @@ public abstract class Visitor {
 	public abstract void visit(Brewery brewery);
 	public abstract void visit(Shipping shipping);
 	public abstract void visit(ChanceField chanceField);
-	public abstract void visit(TaxField taxField);	
+	public abstract void visit(TaxField taxField);
 }
 	
 	
