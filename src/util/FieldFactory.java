@@ -1,7 +1,6 @@
 package util;
 import java.awt.Color;
 
-import gui_fields.GUI_Field;
 import model.fields.Brewery;
 import model.fields.ChanceField;
 import model.fields.Field;
@@ -14,7 +13,7 @@ import model.fields.TaxField;
 public class FieldFactory {
 
 	@SuppressWarnings("unused")
-	public static Field[] makefields(){
+	public static Field[] makeFields(){
 		final String PIC = GameConstants.getDefaultPicture();
 		int[] rent;
 		int price, housePrice, baseRent, taxAmount, taxRate;
