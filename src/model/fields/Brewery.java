@@ -1,13 +1,14 @@
 package model.fields;
 
+import java.awt.Color;
+
 import control.Visitor;
 import gui_fields.GUI_Brewery;
 
 public class Brewery extends Ownable {
-
 	private int baseRent;
 
-	public Brewery(GUI_Brewery guiField, int price, int baseRent ) {
+	private Brewery(GUI_Brewery guiField, int price, int baseRent ) {
 		super(guiField, price);
 		this.baseRent = baseRent;
 	}
@@ -21,4 +22,10 @@ public class Brewery extends Ownable {
 		return baseRent;
 	}
 
+	public static Brewery create(int price, int baseRent, 
+			String picture, String title, String subText, String description, String rent, Color bgColor, Color fgColor){
+		GUI_Brewery guiField = new GUI_Brewery(picture, title, subText, description, rent, bgColor, fgColor);
+		Brewery brewery = new Brewery(guiField, price, baseRent);
+		return brewery;
+	}
 }

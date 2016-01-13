@@ -2,8 +2,10 @@ package util;
 import java.awt.Color;
 
 import gui_fields.GUI_Field;
+import model.fields.Brewery;
 import model.fields.ChanceField;
 import model.fields.Field;
+import model.fields.GoToJailField;
 import model.fields.Refuge;
 import model.fields.Shipping;
 import model.fields.Street;
@@ -18,8 +20,9 @@ public class FieldFactory {
 		int price, housePrice, baseRent, taxAmount, taxRate;
 		String title, subtext, desc, name, rentStr;
 		Color bg, fg;
+		final int passStart = GameConstants.getStartPenge();
 		Field[] fields = {
-				/*  0 */ Refuge.createRefuge(PIC, title="Start", subtext="Modtag: 200", desc="Modtag kr. 200,-\nnår de passerer start", bg=Color.RED, fg=Color.BLACK),
+				/*  0 */ Refuge.createRefuge(PIC, title="Start", subtext="Modtag: "+passStart, desc="Modtag kr. "+passStart+",-\nnår de passerer start", bg=Color.RED, fg=Color.BLACK),
 				/*  1 */ Street.create(name="Rødovrevej", rent = new int[] {50,250,750,2250,4000,6000}, price=1200, housePrice=1000,
 							title="Rødovrevej", subtext="Pris: "+price, desc="Rødovrevej", rentStr="Leje: "+rent[0], bg=new Color(75, 155, 225), fg=Color.BLACK),
 				/*  2 */ ChanceField.create(title="?", subtext="Prøv lykken", desc="Ta' et chancekort.", bg=new Color(204, 204, 204), fg=Color.BLACK),
@@ -40,12 +43,14 @@ public class FieldFactory {
 				/* 10 */ Refuge.createJail(PIC, title="Fængsel", subtext="Fængsel", desc="På besøg i fængslet", bg=new Color(125, 125, 125), fg=Color.BLACK),
 				/* 11 */ Street.create(name="Frederiksberg allé",rent = new int[] {200,1000,3000,9000,12500,15000},  price=2800, housePrice=2000,
 							title="Frederiks-\nberg Allé", subtext="Pris: "+price, desc="Frederiksberg Allé", rentStr="Leje: "+rent[0], bg=new Color(102, 204, 0), fg=Color.BLACK),
-//				/* 12 */ new Brewery("Tuborg", 3000, 100),	
+				/* 12 */ Brewery.create(price=3000, baseRent=100,
+							PIC, title="Tuborg", subtext="Pris: "+price, desc="Tuborg bryggeri", rentStr=baseRent+" x [Terningslag]", bg=Color.BLACK, fg=Color.WHITE),	
 				/* 13 */ Street.create(name="Bülowsvej", rent = new int[] {200,1000,3000,9000,12500,15000}, price=2800, housePrice=2000,
 							title="Bülowsvej", subtext="Pris: "+price, desc="Bülowsvej", rentStr="Leje: "+rent[0], bg=new Color(102, 204, 0), fg=Color.BLACK),
 				/* 14 */ Street.create(name="Gl. Kongevej", rent = new int[] {250,1250,3750,10000,14000,18000}, price=3200, housePrice=2000,
 							title="Gammel Kongevej", subtext="Pris: "+price, desc="Gammel Kongevej", rentStr="Leje: "+rent[0], bg=new Color(102, 204, 0), fg=Color.BLACK),
-//				/* 15 */ new Shipping("D.F.D.S.", 4000, 500),
+				/* 15 */ Shipping.create(price=4000, baseRent=500,
+							PIC, title="D.F.D.S.", subtext="Pris: "+price, desc="D.F.D.S.", rentStr="Leje: "+baseRent, bg=Color.WHITE, fg=Color.BLACK),
 				/* 16 */ Street.create(name="Bernstorffvej", rent = new int[] {300,1400,4000,11000,15000,19000}, price=3600, housePrice=2000,
 							title="Bernstorffsvej", subtext="Pris: "+price, desc="Bernstorffsvej", rentStr="Leje: "+rent[0], bg=new Color(153, 153, 153), fg=Color.BLACK),
 				/* 17 */ ChanceField.create(title="?", subtext="Prøv lykken", desc="Ta' et chancekort.", bg=new Color(204, 204, 204), fg=Color.BLACK),
@@ -61,15 +66,18 @@ public class FieldFactory {
 							title="Østerbro-\ngade", subtext="Pris: "+price, desc="Østerbrogade", rentStr="Leje: "+rent[0], bg=Color.RED, fg=Color.BLACK),
 				/* 24 */ Street.create(name="Grønningen", rent = new int[] {400,2000,6000,15000,18500,22000}, price=4800, housePrice=3000,
 							title="Grønningen", subtext="Pris: "+price, desc="Grønningen", rentStr="Leje: "+rent[0], bg=Color.RED, fg=Color.BLACK),
-//				/* 25 */ new Shipping("Ø.S.", 4000, 500),
+				/* 25 */ Shipping.create(price=4000, baseRent=500,
+							PIC, title="Ø.S.", subtext="Pris: "+price, desc="Ø.S. redderiet", rentStr="Leje: "+baseRent, bg=Color.WHITE, fg=Color.BLACK),
 				/* 26 */ Street.create(name="Bredegade", rent = new int[] {450,2200,6600,16000,19500,23000}, price=5200, housePrice=3000,
 							title="Bredgade", subtext="Pris: "+price, desc="Bredgade", rentStr="Leje: "+rent[0], bg=Color.WHITE, fg=Color.BLACK),
 				/* 27 */ Street.create(name="Kgs. Nytorv", rent = new int[] {450,2200,6600,16000,19500,23000}, price=5200, housePrice=3000,
 							title="Kgs. Nytorv", subtext="Pris: "+price, desc="Kongens Nytorv", rentStr="Leje: "+rent[0], bg=Color.WHITE, fg=Color.BLACK),
-//				/* 28 */ new Brewery("Carlsberg", 3000, 100),
+				/* 28 */ Brewery.create(3000, 100,
+							PIC, title="Carlsberg", subtext="Pris: "+price, desc="Carlsberg bryggeri", rentStr=baseRent+" x [Terningslag]", bg=Color.BLACK, fg=Color.WHITE),
 				/* 29 */ Street.create(name="Østergade", rent = new int[] {500,2400,7200,17000,20500,24000}, price=5600, housePrice=3000,
 							title="Østergade", subtext="Pris: "+price, desc="Østergade", rentStr="Leje: "+rent[0], bg=Color.WHITE, fg=Color.BLACK),
-//				/* 30 */ new GoToJailField("Gå i fængsel"),
+				/* 30 */ GoToJailField.create(PIC, title="Gå i fængsel", subtext="Gå i fængsel", desc="De fængsles\nSlå to ens for at komme ud", 
+							bg=new Color(125, 125, 125), fg=Color.BLACK),
 				/* 31 */ Street.create(name="Amagertorv", rent = new int[] {550,2600,7800,18000,22000,25000}, price=6000, housePrice=4000,
 							title="Amagertorv", subtext="Pris: "+price, desc="Amagertorv", rentStr="Leje: "+rent[0], bg=new Color(255, 255, 50), fg=Color.BLACK),
 				/* 32 */ Street.create(name="Vimmelskaftet", rent = new int[] {550,2600,7800,18000,22000,25000}, price=6000, housePrice=4000,
@@ -77,7 +85,8 @@ public class FieldFactory {
 				/* 33 */ ChanceField.create(title="?", subtext="Prøv lykken", desc="Ta' et chancekort.", bg=new Color(204, 204, 204), fg=Color.BLACK),
 				/* 34 */ Street.create(name="Nygade", rent = new int[] {600,3000,9000,20000,24000,28000}, price=6400, housePrice=4000,
 							title="Nygade", subtext="Pris: "+price, desc="Nygade", rentStr="Leje: "+rent[0], bg=new Color(255, 255, 50), fg=Color.BLACK),
-//				/* 35 */ new Shipping("Bornholm", 4000, 500),
+				/* 35 */ Shipping.create(price=4000, baseRent=500,
+							PIC, title="Bornholm", subtext="Pris: "+price, desc="Bornholms redderi", rentStr="Leje: "+baseRent, bg=Color.WHITE, fg=Color.BLACK),
 				/* 36 */ ChanceField.create(title="?", subtext="Prøv lykken", desc="Ta' et chancekort.", bg=new Color(204, 204, 204), fg=Color.BLACK),
 				/* 37 */ Street.create(name="Frederiksberggade", rent = new int[] {700,3500,10000,22000,26000,30000}, price=7000, housePrice=4000,
 							title="Frederiks-\nberggade", subtext="Pris: "+price, desc="Frederiksberggade", rentStr="Leje: "+rent[0], bg=new Color(150, 60, 150), fg=Color.WHITE),
