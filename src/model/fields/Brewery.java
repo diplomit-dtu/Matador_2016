@@ -2,7 +2,7 @@ package model.fields;
 
 import java.awt.Color;
 
-import control.Visitor;
+import control.FieldVisitor;
 import gui_fields.GUI_Brewery;
 
 public class Brewery extends Ownable {
@@ -14,7 +14,7 @@ public class Brewery extends Ownable {
 	}
 
 	@Override
-	public void accept(Visitor v) {
+	public void accept(FieldVisitor v) {
 		v.visit(this);
 	}
 

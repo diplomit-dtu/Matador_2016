@@ -19,7 +19,7 @@ public class RunGameAction extends Action {
 					new PlayerTurnAction(gc).execute();
 				}
 			}
-		} while(gc.getGameOver());
+		} while(!gc.getGameOver());
 
 	}
 }

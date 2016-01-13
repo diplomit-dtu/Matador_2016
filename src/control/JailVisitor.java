@@ -10,7 +10,7 @@ import model.fields.Shipping;
 import model.fields.Street;
 import model.fields.TaxField;
 @Deprecated
-public class JailVisitor extends Visitor {
+public class JailVisitor extends FieldVisitor {
 
 	private GameController gc;
 	public JailVisitor(GameController gameController) {

@@ -2,7 +2,7 @@ package model.fields;
 
 import java.awt.Color;
 
-import control.Visitor;
+import control.FieldVisitor;
 import gui_fields.GUI_Jail;
 import gui_fields.GUI_Refuge;
 
@@ -16,7 +16,7 @@ public class Refuge extends Field {
 	}
 
 	@Override
-	public void accept(Visitor v) {
+	public void accept(FieldVisitor v) {
 		v.visit(this);
 	}
 
