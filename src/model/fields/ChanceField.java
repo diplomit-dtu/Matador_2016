@@ -2,7 +2,7 @@ package model.fields;
 
 import java.awt.Color;
 
-import control.Visitor;
+import control.FieldVisitor;
 import gui_fields.GUI_Chance;
 
 public class ChanceField extends Field {
@@ -12,7 +12,7 @@ public class ChanceField extends Field {
 	}
 
 	@Override
-	public void accept(Visitor v) {
+	public void accept(FieldVisitor v) {
 		v.visit(this);
 	}
 

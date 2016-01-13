@@ -16,7 +16,7 @@ public class MoveActiveDiceRollAction extends Action {
 		Player player = gc.getActivePlayer();
 		player.move(gc.getDiceCup().getSum());
 		gc.getGuiAdaptor().updateCarPosition(player);
-		FieldVisitor v = new FieldVisitor(gc);
+		LandOnFieldVisitor v = new LandOnFieldVisitor(gc);
 		Field currentField = gc.getCurrentField();
 		currentField.accept(v);
 

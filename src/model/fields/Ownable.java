@@ -1,6 +1,6 @@
 package model.fields;
 
-import control.Visitor;
+import control.FieldVisitor;
 import gui_fields.GUI_Ownable;
 import model.Player;
 
@@ -14,7 +14,7 @@ public abstract class Ownable extends Field {
 	}
 
 	@Override
-	public abstract void accept(Visitor v);
+	public abstract void accept(FieldVisitor v);
 
 	public int getPrice() {
 		return price;

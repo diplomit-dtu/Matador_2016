@@ -9,6 +9,7 @@ import gui_fields.GUI_Player;
 import gui_main.GUI;
 import model.Player;
 import model.fields.Field;
+import model.fields.Refuge;
 import util.GameConstants;
 import util.Messages;
 
@@ -132,6 +133,11 @@ public class GuiAdaptor {
 
 	public void showTooManySameRolls(Player p) {
 		gui.showMessage(p.getName() + ", du har slået for mange ens i træk - du ryger i fængsel!");
+		
+	}
+
+	public void showLandedOnRefuge(Player player, Refuge refuge) {
+		gui.showMessage(player.getName() + ", du landede på " + refuge.getGuiField().getTitle() + ". Her sker ikke noget.");
 		
 	}
 
