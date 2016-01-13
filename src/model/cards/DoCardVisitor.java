@@ -26,4 +26,10 @@ public class DoCardVisitor extends CardVisitor {
 		new MovePlayerToAction(gc, player, dest).execute();
 	}
 
+	@Override
+	public void visit(MoneyCard card) {
+		Player player
+		
+	}
+
 }
