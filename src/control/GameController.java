@@ -84,6 +84,8 @@ public class GameController {
 		return noLeft <=1;
 	}
 
+	public Field[] getFields(){ return fields; }
+	
 	public Field getCurrentField() {
 		return fields[getActivePlayer().getPosition()];
 	}
