@@ -19,6 +19,7 @@ public class GuiAdaptor {
 		for (int i =0; i<fields.length;i++) {
 			gui_fields[i]= fields[i].getGuiField();
 		}
+		gui = new GUI(gui_fields);
 	}
 
 	public GuiAdaptor(){
