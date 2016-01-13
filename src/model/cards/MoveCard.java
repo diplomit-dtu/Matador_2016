@@ -1,7 +1,5 @@
 package model.cards;
 
-import control.Visitor;
-
 public class MoveCard extends Card {
 	private int dist;
 
@@ -13,4 +11,6 @@ public class MoveCard extends Card {
 	public void accept(CardVisitor v) {
 		v.visit(this);
 	}
+	
+	public int getDist() { return dist; }
 }

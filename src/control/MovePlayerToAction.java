@@ -3,23 +3,23 @@ package control;
 import model.Player;
 import model.fields.Field;
 
-public class MoveActiveDiceRollAction extends Action {
+public class MovePlayerToAction extends Action {
+	private Player player;
+	private int dest;
 
-	public MoveActiveDiceRollAction(GameController gc) {
+	public MovePlayerToAction(GameController gc, Player player, int dest) {
 		super(gc);
-		// TODO Auto-generated constructor stub
+		this.player = player;
+		this.dest = dest;
 	}
 
 	@Override
 	public void execute() {
-		//Determine activeplayer
-		Player player = gc.getActivePlayer();
-		player.move(gc.getDiceCup().getSum());
+		player.setPosition(dest);
 		gc.getGuiAdaptor().updateCarPosition(player);
 		LandOnFieldVisitor v = new LandOnFieldVisitor(gc);
 		Field currentField = gc.getCurrentField();
 		currentField.accept(v);
-
 	}
 
 }
