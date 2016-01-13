@@ -9,6 +9,7 @@ public class Player {
 	private String name;
 	private Account account;
 	private boolean inJail = false;
+	private int jailTurns = 0;
 	private int sameEyesCount = 0;
 	private GUI_Player guiPlayer;
 	private int position; //0 indexed
@@ -44,7 +45,12 @@ public class Player {
 	public void resetSameRoll() { sameEyesCount=0; }
 	public boolean tooManySameRolls() { return sameEyesCount>=GameConstants.getMaxAllowedSameRolls(); }
 
+	//JailLogic
 	public void goToJail() { inJail = true; }
+	public void getOutOfJail(){inJail = false; jailTurns=0;}
+	
+	public void incrementJailTurns(){ jailTurns++; }
+	public int getJailTurns() {	return jailTurns;}
 
 	@Override
 	public String toString() {
@@ -55,4 +61,10 @@ public class Player {
 	public boolean isBankrupt() {
 		return bankrupt ;
 	}
+
+	public void moveTo(int position) {
+		this.position=position;
+		
+	}
+
 }

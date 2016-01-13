@@ -3,13 +3,13 @@ package control;
 import model.fields.Brewery;
 import model.fields.ChanceField;
 import model.fields.GoToJailField;
-import model.fields.Ownable;
 import model.fields.Refuge;
 import model.fields.Shipping;
 import model.fields.Street;
 import model.fields.TaxField;
 
 public class LandOnFieldVisitor extends FieldVisitor {
+
 
 	private GameController gc;
 
@@ -20,18 +20,14 @@ public class LandOnFieldVisitor extends FieldVisitor {
 	@Override
 	public void visit(Refuge refuge) {
 		System.out.println("Landed on refuge");
-		new Action(gc) {			
-			@Override
-			public void execute() {
-				gc.getGuiAdaptor().showLandedOnRefuge(gc.getActivePlayer(), refuge);				
-			}
-		}.execute();
+		new LandOnRefugeAction(gc,refuge).execute();
 
 	}
 
 	@Override
 	public void visit(GoToJailField goToJail) {
 		System.out.println("Landed on goToJail");
+		new LandOnGoToJailAction(gc).execute();
 
 	}
 

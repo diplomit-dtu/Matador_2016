@@ -14,7 +14,7 @@ public class GameController {
 	private Player activePlayer;
 	private DiceCup diceCup;
 	private int jailPosition;
-	
+
 	public GameController(){
 		init();
 	}
@@ -45,11 +45,22 @@ public class GameController {
 
 	public void setActivePlayer(Player player) {
 		this.activePlayer = player;
-		
+
 	}
 
 	public Player getActivePlayer() {
 		return activePlayer;
+	}
+
+	public Player[] getInactivePlayers(){
+		//FIXME unsafe!
+		if (activePlayer==null) return players;
+		Player[] inactive = new Player[players.length-1];
+		int j =0;
+		for (int i = 0; i < players.length; i++) {
+			if (players[i]!=activePlayer) inactive[j++]=players[i];
+		}
+		return inactive;
 	}
 
 	public DiceCup getDiceCup() {
@@ -62,7 +73,7 @@ public class GameController {
 			fields[i].accept(new JailVisitor(this));
 		}
 		return jailPosition;
-		
+
 	}
 
 	public boolean getGameOver() {

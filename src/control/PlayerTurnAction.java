@@ -31,7 +31,7 @@ public class PlayerTurnAction extends Action {
 					gc.getGuiAdaptor().showExtraTurn(activePlayer);
 				}
 
-			} while (extraTurn);
+			} while (extraTurn && !activePlayer.isInJail());
 		}
 	}
 }

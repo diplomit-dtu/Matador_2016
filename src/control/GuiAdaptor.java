@@ -141,6 +141,21 @@ public class GuiAdaptor {
 		
 	}
 
+	public void showLandedOnGotoJail(Player player) {
+		gui.showMessage(player.getName() + ", du er landet på gå til fængsel. Du rykker direkte i fængsel.");
+		
+	}
+
+	public void showTooManyTurnsInJail(Player player) {
+		gui.showMessage(player.getName() + ", du har været i fængsel for længe, du må betale for at komme ud");
+		
+	}
+
+	public void showNotEnoughMoney(Player payingPlayer) {
+		gui.showMessage(payingPlayer.getName() + ", du har ikke nok penge.");
+		
+	}
+
 	
 	
 

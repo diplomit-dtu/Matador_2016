@@ -24,6 +24,14 @@ public class GameConstants {
 	public static int getErrorInt() { return getInt("errorInt"); }
 	public static String getDefaultPicture() { return getString("defaultPicture"); }
 
+	public static int getJailPosition() {
+		return getInt("jailPosition");
+	}
+
+	public static int getMaxJailTurns() { return getInt("maxJailTurns");}
+
+	public static int getGetOutofJailPrice() {	return getInt("getOutOfJailPrice");	}
+
 	
 
 
