@@ -21,9 +21,9 @@ public class MandatoryPayAction extends Action {
 			//Attempt to raise money
 			gc.getGuiAdaptor().showNotEnoughMoney(payingPlayer);
 			boolean wantsToSell = true;
-			while (payingPlayer.hasAssetsToSell() && payingPlayer.){
-				new RaiseMoneyAction(gc, payingPlayer);
-			}
+//			while (payingPlayer.hasAssetsToSell() && payingPlayer.){
+//				new RaiseMoneyAction(gc, payingPlayer);
+//			}
 		}
 		
 	}
